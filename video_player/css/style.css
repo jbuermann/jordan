@@ -1,0 +1,42 @@
+/*
+	The end goal here is to create the skin of the video player in such a way that it is easy to toggle the skin used while still adhering to proper css standards.
+*/
+
+/* Base classes */
+
+.wrapper
+{
+     overflow: hidden;
+     position: relative;
+}
+
+/* Core Skeleton: No skinning */
+.video_player
+{
+     width:500px;
+     height:500px;
+     border:solid 1px black;
+     font-size:16pt; /* 100% */
+}
+
+.controls
+{
+     text-align:center;
+}
+     .ctrbtn
+     {
+          
+     }
+
+.main_viewer
+{
+     border:solid 1px black;
+     width:400px;
+     height:400px;
+     margin:10px auto 5px auto;
+}
+     
+     
+     
+/* Skin: Default */
+/* Skin: Realtruck */
