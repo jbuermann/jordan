@@ -1,4 +1,4 @@
 jordan
 ======
 
-80/20 projects - Hello world
+80/20 projects - Goodbye
