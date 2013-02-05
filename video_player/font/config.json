@@ -1,0 +1,234 @@
+{
+  "name": "videoplayer",
+  "glyphs": [
+    {
+      "search": [
+        "pause",
+        "player"
+      ],
+      "code": 9097,
+      "from": 9097,
+      "uid": "d8d378d0ce413f231dfa37592e39c227",
+      "css": "pause",
+      "orig_css": "pause",
+      "orig_code": 9097,
+      "src": "entypo"
+    },
+    {
+      "search": [
+        "right",
+        "player"
+      ],
+      "code": 9193,
+      "uid": "18f7c393e3532e40edd45607c9d99988",
+      "css": "fast-forward",
+      "orig_css": "fast-forward",
+      "orig_code": 9193,
+      "src": "entypo",
+      "from": 9193
+    },
+    {
+      "search": [
+        "left",
+        "player"
+      ],
+      "code": 9194,
+      "uid": "85806fd8ab907f45d34f976354a0df23",
+      "css": "fast-backward",
+      "orig_css": "fast-backward",
+      "orig_code": 9194,
+      "src": "entypo",
+      "from": 9194
+    },
+    {
+      "search": [
+        "right",
+        "player"
+      ],
+      "code": 9197,
+      "uid": "0afbb00323696f49e9c47f4d9fe6390b",
+      "css": "to-end",
+      "orig_css": "to-end",
+      "orig_code": 9197,
+      "src": "entypo",
+      "from": 9197
+    },
+    {
+      "search": [
+        "left",
+        "player"
+      ],
+      "code": 9198,
+      "uid": "ceefe7653a4f6edaacce9e7f196cec5a",
+      "css": "to-start",
+      "orig_css": "to-start",
+      "orig_code": 9198,
+      "src": "entypo",
+      "from": 9198
+    },
+    {
+      "search": [
+        "stop",
+        "player"
+      ],
+      "code": 9632,
+      "uid": "48f2e18872fe74d4579a4c8a1527fc1e",
+      "css": "stop",
+      "orig_css": "stop",
+      "orig_code": 9632,
+      "src": "entypo",
+      "from": 9632
+    },
+    {
+      "search": [
+        "play",
+        "player"
+      ],
+      "code": 9654,
+      "uid": "cb13afd4722a849d48056540bb74c47e",
+      "css": "play",
+      "orig_css": "play",
+      "orig_code": 9654,
+      "src": "entypo",
+      "from": 9654
+    },
+    {
+      "search": [
+        "record",
+        "player"
+      ],
+      "code": 9899,
+      "from": 9899,
+      "uid": "e188c02f740feff7e2d2bce1950b75fa",
+      "css": "record",
+      "orig_css": "record",
+      "orig_code": 9899,
+      "src": "entypo"
+    },
+    {
+      "search": [
+        "resize",
+        "fullscreen"
+      ],
+      "code": 59204,
+      "from": 59204,
+      "uid": "dsfybb9l0x5fyd7e3o5kyisqppifztfu",
+      "css": "resize-full",
+      "orig_css": "resize-full",
+      "orig_code": 59204,
+      "src": "modernpics"
+    },
+    {
+      "search": [
+        "resize"
+      ],
+      "code": 59206,
+      "from": 59206,
+      "uid": "qdhvqjd167ee2byleebhw58j4omhb8pl",
+      "css": "resize-small",
+      "orig_css": "resize-small",
+      "orig_code": 59206,
+      "src": "modernpics"
+    },
+    {
+      "search": [
+        "load",
+        "progress",
+        "wait"
+      ],
+      "code": 59449,
+      "meta": {
+        "email": "berbentseva_angela@yahoo.com",
+        "author": "Angela Berbentseva, specially for fontello"
+      },
+      "uid": "9bc2902722abb366a213a052ade360bc",
+      "css-ext": "animate-spin",
+      "css": "spin6",
+      "orig_css": "spin6",
+      "orig_code": 59449,
+      "src": "fontelico",
+      "from": 59449
+    },
+    {
+      "search": [
+        "shuffle",
+        "random"
+      ],
+      "code": 128256,
+      "uid": "3d349daaea304032a7669b4f24931b6c",
+      "css": "shuffle",
+      "orig_css": "shuffle",
+      "orig_code": 128256,
+      "src": "entypo",
+      "from": 128256
+    },
+    {
+      "search": [
+        "loop",
+        "repeat"
+      ],
+      "code": 128257,
+      "uid": "8e0220796066428d6ddea96a4f1b5131",
+      "css": "loop",
+      "orig_css": "loop",
+      "orig_code": 128257,
+      "src": "entypo",
+      "from": 128257
+    },
+    {
+      "search": [
+        "circle",
+        "sync",
+        "reload",
+        "refresh"
+      ],
+      "code": 128260,
+      "uid": "3bd18d47a12b8709e9f4fe9ead4f7518",
+      "css": "arrows-ccw",
+      "orig_css": "arrows-ccw",
+      "orig_code": 128260,
+      "src": "entypo",
+      "from": 128260
+    },
+    {
+      "search": [
+        "volume",
+        "sound",
+        "mute"
+      ],
+      "code": 128263,
+      "from": 128263,
+      "uid": "8pcqxtjxtvkqo3dgemy49z7fw1d8xsh9",
+      "css": "volume-off",
+      "orig_css": "volume-off",
+      "orig_code": 128263,
+      "src": "modernpics"
+    },
+    {
+      "search": [
+        "volume",
+        "sound"
+      ],
+      "code": 128265,
+      "from": 128265,
+      "uid": "ivjrs8ijaooc3a2dw4790kb2rx4l6kjh",
+      "css": "volume-down",
+      "orig_css": "volume-down",
+      "orig_code": 128265,
+      "src": "modernpics"
+    },
+    {
+      "search": [
+        "volume",
+        "sound"
+      ],
+      "code": 128266,
+      "from": 128266,
+      "uid": "rrb2e7qiu68cw7itzq0wzm2hugw1u4lu",
+      "css": "volume-up",
+      "orig_css": "volume-up",
+      "orig_code": 128266,
+      "src": "modernpics"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'videoplayer';
+  font-style: normal;
+  font-weight: normal;
+/* fix buttons height */
+  line-height: 1em;
+/* you can be more comfortable with increased icons size */
+/* font-size: 120%; */
+}
+
+.icon-pause { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x2389;&nbsp;'); }
+.icon-fast-forward { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x23e9;&nbsp;'); }
+.icon-fast-backward { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x23ea;&nbsp;'); }
+.icon-to-end { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x23ed;&nbsp;'); }
+.icon-to-start { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x23ee;&nbsp;'); }
+.icon-stop { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x25a0;&nbsp;'); }
+.icon-play { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x25b6;&nbsp;'); }
+.icon-record { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x26ab;&nbsp;'); }
+.icon-resize-full { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe744;&nbsp;'); }
+.icon-resize-small { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe746;&nbsp;'); }
+.icon-spin6 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe839;&nbsp;'); }
+.icon-shuffle { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x1f500;&nbsp;'); }
+.icon-loop { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x1f501;&nbsp;'); }
+.icon-arrows-ccw { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x1f504;&nbsp;'); }
+.icon-volume-off { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x1f507;&nbsp;'); }
+.icon-volume-down { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x1f509;&nbsp;'); }
+.icon-volume-up { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x1f50a;&nbsp;'); }

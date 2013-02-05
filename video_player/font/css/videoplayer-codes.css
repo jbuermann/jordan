@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+
+.icon-pause:before { content: '\2389'; } /* '⎉' */
+.icon-fast-forward:before { content: '\23e9'; } /* '⏩' */
+.icon-fast-backward:before { content: '\23ea'; } /* '⏪' */
+.icon-to-end:before { content: '\23ed'; } /* '⏭' */
+.icon-to-start:before { content: '\23ee'; } /* '⏮' */
+.icon-stop:before { content: '\25a0'; } /* '■' */
+.icon-play:before { content: '\25b6'; } /* '▶' */
+.icon-record:before { content: '\26ab'; } /* '⚫' */
+.icon-resize-full:before { content: '\e744'; } /* '' */
+.icon-resize-small:before { content: '\e746'; } /* '' */
+.icon-spin6:before { content: '\e839'; } /* '' */
+.icon-shuffle:before { content: '🔀'; } /* '\1f500' */
+.icon-loop:before { content: '🔁'; } /* '\1f501' */
+.icon-arrows-ccw:before { content: '🔄'; } /* '\1f504' */
+.icon-volume-off:before { content: '🔇'; } /* '\1f507' */
+.icon-volume-down:before { content: '🔉'; } /* '\1f509' */
+.icon-volume-up:before { content: '🔊'; } /* '\1f50a' */
