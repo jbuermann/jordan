@@ -1,5 +1,5 @@
-/* Base classes */
-body{background:black;}
+/* Base classes 
+body{background:black;}*/
 .wrapper
 {
      overflow: hidden;
@@ -19,21 +19,17 @@ body{background:black;}
 .main_viewer
 {
      padding:15px;
-     padding-bottom:0px;
+     padding-bottom:0;
+     padding-right:0;
      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(125,185,232,0)), color-stop(61%,rgba(38,57,71,0)), color-stop(88%,rgba(0,0,0,1)));
      background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(38,57,71,0) 61%,rgba(0,0,0,1) 88%);
 }
     video
     {
         vertical-align: bottom;
-         box-shadow: 0px 5px 5px #000;
+        box-shadow: 0px 5px 5px #000;
     }
-     video,
-     #reflection
-     {
-          display:block;
-          margin:auto;
-     }
+     #reflection{background:#121411;}
 
 #positionview 
 {
@@ -73,7 +69,7 @@ body{background:black;}
 {
      text-align:center;
      font-size:1.5em;
-     background:black;
+     background: black;
 }
      .ctrbtn
      {
@@ -86,32 +82,28 @@ body{background:black;}
           color:green;   
      }
 
-
-    /*
-    #volumecontrol 
-    {
-      position: relative;
-      float: right;
-      padding-left:20px;
-    }
+#volumecontrol 
+{
+    width:10px;
+    height:59%;
+    float:right;
+    margin-top:15px;
+}
     #volumebar 
     {
-      position:relative;
-      height:225px;
-      width:25px;
-      border:2px solid black;
+         height: 100%;
+         width:100%;
+         position: relative;
+         background:rgba(0, 0, 100, .5);
     }
     #volume 
     {
-      position:absolute;
-      height:225px;
-      width:25px;
-      background:#006;
+         background:rgba(100, 0, 0, .8);
+         z-index:1;
+         width:100%;
+         position:absolute;
+         bottom:0;
     }
-    #volume.disabled 
-    {
-      background:#ccc;
-    }*/
 
 /* Color the border by the video */
 .ambience 
@@ -130,7 +122,336 @@ body{background:black;}
      -o-transition-timing-function: linear;
 }
 
+/* Mr. Stick */
+.stickman
+{
+     width:100px;
+     height:100px;
+     margin-left:-100px;
+     float:right;
+}
+.head 
+{
+     width: 40px;
+     height: 40px;
+     background: #fff;
+     border: 2px solid white;
+     border-radius: 22px 22px;
+     position: absolute;
+     top: 0;
+     left: 50%;
+     margin-left: -22px;
+     text-align: center;
+     line-height: 40px;
+     z-index:5;
+}
 
-     
-/* Skin: Default */
-/* Skin: Realtruck */
+.eyes
+{
+     width: 6.2px;
+     height: 5.8px;
+     background: #fff;
+     border: 1px solid blue;
+     border-radius: 11px 11px;
+     margin-left: -55%;
+     text-align: center;
+}
+.leftEye 
+{
+     position: absolute;
+     top: 11px;
+     left: 30px;
+}
+
+.rightEye 
+{
+     position: absolute;
+     top: 11px;
+     right: 8px;
+}
+.mouth 
+{
+     width: 13px;
+     height: 0px;
+     background: #fff;
+     border: 1px solid red;
+     border-radius:22px 22px;
+     position: absolute;
+     top: 26px;
+     left: 35px;
+     margin-left: -55%;
+     text-align: center;
+}
+
+.body 
+{
+     width: 10px;
+     height: 29px;
+     background: white;
+     position: absolute;
+     top: 42%;
+     left: 46%;
+     margin-left: -1px;
+     z-index:3;
+}
+.limb
+{
+     width: 3.5px;
+     height: 75px;
+     position: absolute;
+     top: 1.3%;
+     left: 50%;
+     margin-left: -1px;
+     -webkit-transition-property: -webkit-transform;
+     -webkit-transition-duration: 1s;
+     z-index:1;
+}
+.limb .segment_1 
+{
+     background: #000;
+     border:solid 6px white;
+   
+}
+.limb .segment_2 
+{
+     background: #000;
+     border:solid 6px white;
+}
+
+.leftArm
+{
+     top: 2px;
+     -webkit-transform: rotate(-160deg);           
+}
+.rightArm 
+{
+     top: 2px;
+     -webkit-transform: rotate(160deg);
+}
+.leftLeg
+{
+     top: 27.6%;
+     -webkit-transform: rotate(-160deg);
+}
+.rightLeg 
+{
+     top: 26.6%;
+     -webkit-transform: rotate(160deg);
+}
+/* Animation Classes */
+
+
+.SleepyBlink
+{
+       -webkit-transform: scale(1,1);
+      -webkit-animation-name: SleepyBlink;
+      -webkit-animation-duration:6s;
+      -webkit-animation-timing-function:linear;
+      -webkit-animation-delay:2s;
+      -webkit-animation-iteration-count:infinite;
+}
+.SleepyHeadRoll
+{
+      -webkit-transform: rotate(340deg);
+      -webkit-animation-name: SleepyHeadRoll;
+      -webkit-animation-duration:6s;
+      -webkit-animation-timing-function:linear;
+      -webkit-animation-delay:2s;
+      -webkit-animation-iteration-count:infinite;     
+}
+.shrugLeft
+{
+      -webkit-animation-duration: 2s;
+      -webkit-animation-name: shrugLeft;
+      -webkit-animation-iteration-count: 2;
+      -webkit-animation-direction: alternate;
+}
+.shrugRight
+{
+      -webkit-animation-duration: 2s;
+      -webkit-animation-name: shrugRight;
+      -webkit-animation-iteration-count: 2;
+      -webkit-animation-direction: alternate;
+}
+
+.waveLeft
+{
+     -webkit-animation-duration: 1s;
+      -webkit-animation-name: waveLeft;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+     -webkit-animation-delay:1s;      
+}
+.waveRight
+{
+     -webkit-animation-duration: 1s;
+      -webkit-animation-name: waveRight;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+     -webkit-animation-delay:1s;      
+}
+.waveBody
+{
+     -webkit-animation-duration: 1s;
+      -webkit-animation-name: waveBody;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+     -webkit-animation-delay:1s;      
+}
+
+.excited
+{
+      -webkit-transform: scale(1,1);
+      -webkit-animation-name: excited;
+      -webkit-animation-duration:6s;
+      -webkit-animation-timing-function:linear;
+      -webkit-animation-delay:2s;
+      -webkit-animation-iteration-count:infinite;
+}
+
+.crazyRight
+{
+     -webkit-animation-duration: 1s;
+      -webkit-animation-name: crazyRight;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+     -webkit-animation-delay:2s;       
+}
+
+.crazyLeft
+{
+     -webkit-animation-duration: 1s;
+      -webkit-animation-name: crazyLeft;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+     -webkit-animation-delay:2s;       
+}
+
+.crazyHead
+{
+     -webkit-animation-duration: 1s;
+      -webkit-animation-name: crazyHead;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+     -webkit-animation-delay:2s;       
+}
+
+.openMouth
+{
+     height:3px;
+}
+
+.ooMouth
+{
+     height:3px; 
+     -webkit-animation-duration: 2s;
+      -webkit-animation-name: ooMouth;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+     -webkit-animation-delay:1s;         
+}
+@-webkit-keyframes waveLeft 
+{
+      from{-webkit-transform: rotate(-160deg);}
+      to  {-webkit-transform: rotate(-90deg);}
+}
+
+@-webkit-keyframes waveRight 
+{
+      from{-webkit-transform: rotate(160deg);}
+      to  {-webkit-transform: rotate(90deg);}
+}
+
+@-webkit-keyframes waveBody 
+{
+      from{height: 29px;}
+      to  {height: 26px;}
+}
+
+
+@-webkit-keyframes shrugLeft 
+{
+      from{top:2px;-webkit-transform: rotate(-160deg);}
+      to  {top:-8px;-webkit-transform: rotate(-150deg);}
+}
+@-webkit-keyframes shrugRight 
+{
+      from{top:2px;-webkit-transform: rotate(160deg);}
+      to  {top:-8px;-webkit-transform: rotate(150deg);}
+}
+
+@-webkit-keyframes ooMouth 
+{
+     0% {
+          width:13px;
+     }
+     8% {
+          width:5px;
+          height:5px;
+     }
+     18% {
+          width:10px;
+          height:10px;
+     }
+     28% {
+          width:7px;
+          height:7px;
+     }
+     100% {
+          width:13px;
+          height:3px;
+     }
+}
+
+@-webkit-keyframes excited 
+{
+     0% {-webkit-transform: scale(1,1);}
+     2% {-webkit-transform: scale(1,0);}
+     4% {-webkit-transform: scale(1,0);}
+     5% {-webkit-transform: scale(1,2);}
+     100% {-webkit-transform: scale(1,2);}
+}
+
+@-webkit-keyframes SleepyBlink 
+{
+     0% {-webkit-transform: scale(1,1);}
+     2% {-webkit-transform: scale(1,0);}
+     4% {-webkit-transform: scale(1,0);}
+     5% {-webkit-transform: scale(1,1.3);}
+     100% {-webkit-transform: scale(1,0);}
+}
+@-webkit-keyframes SleepyHeadRoll 
+{
+     0% {-webkit-transform: rotate(330deg);}
+     2% {-webkit-transform: rotate(340deg);}
+     5% {-webkit-transform: rotate(330deg);}
+     15% {-webkit-transform: rotate(360deg);}
+     100% {-webkit-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes crazyRight 
+{
+     0% {-webkit-transform: rotate(160deg);}
+     2% {-webkit-transform: rotate(190deg);}
+     5% {-webkit-transform: rotate(200deg);}
+     15% {-webkit-transform: rotate(140deg);}
+     100% {-webkit-transform: rotate(90deg);}
+}
+
+@-webkit-keyframes crazyLeft 
+{
+     0% {-webkit-transform: rotate(-160deg);}
+     2% {-webkit-transform: rotate(-190deg);}
+     5% {-webkit-transform: rotate(-200deg);}
+     15% {-webkit-transform: rotate(-140deg);}
+     100% {-webkit-transform: rotate(-90deg);}
+}
+
+@-webkit-keyframes crazyHead 
+{
+     0% {-webkit-transform: rotate(330deg);}
+     2% {-webkit-transform: rotate(340deg);}
+     5% {-webkit-transform: rotate(160deg);}
+     15% {-webkit-transform: rotate(260deg);}
+     100% {-webkit-transform: rotate(360deg);}
+}

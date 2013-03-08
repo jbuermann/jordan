@@ -9,12 +9,112 @@ window.onload = function()
 	objReflection.initCanvas();
 	
 	videoControls();
+	
+	$('#mainVideo')[0].addEventListener("volumechange",animateStickman,false);
 }
 
 $(document).ready(function()
 {
-	
+	// Set Volume graphic to match current volume
+	$('#mainVideo')[0].volume = .1;
+	var percentage = $('#mainVideo')[0].volume * 100;
+	$("#volume").css('height', percentage+'%');	
 });
+
+function animateStickman()
+{
+	video     = $('#mainVideo')[0]; //dom version	
+	mute      = $("#mute");
+	volumeBar = $('#volumebar');
+	vol       = $("#volume");
+	volUp     = $("#volUp");
+	volDown   = $("#volDown");
+	
+	var percentage = Math.round(video.volume * 100);
+
+	if(video.muted)
+	{
+		stopAnimation();
+		$('.eyes').addClass('SleepyBlink');
+		$('.head').addClass('SleepyHeadRoll');				
+	}
+	else if(percentage <= 20)
+	{
+		stopAnimation();
+		$('.leftArm').addClass('shrugLeft');
+		$('.rightArm').addClass('shrugRight');	
+	}
+	else if(percentage <= 30)
+	{
+		stopAnimation();
+		$('.leftArm').addClass('waveLeft');
+	}	
+	else if(percentage <= 40)
+	{
+		stopAnimation();
+		$('.leftArm').addClass('waveRight');
+		$('.RightArm').addClass('waveRight');
+		$('.RightArm').css('-webkit-animation-delay','2s')
+	}
+	else if(percentage <= 50)
+	{
+		stopAnimation();
+		$(".mouth").addClass('ooMouth');
+		$('.leftArm').addClass('shrugLeft');
+		$('.rightArm').addClass('shrugRight');	
+		$('.RightArm').css({
+			'-webkit-animation-duration':'1s',
+			'-webkit-animation-iteration-count':'infinite'
+		});
+		$('.leftArm').css({
+			'-webkit-animation-duration':'.5s',
+			'-webkit-animation-iteration-count':'infinite'
+		});
+		
+		$('.leftLeg').addClass('waveLeft');
+		$('.RightLeg').addClass('waveRight');
+		$('.RightBody').addClass('waveBody');
+	}
+	else if(percentage <= 70)
+	{
+		stopAnimation();
+		$('.leftArm').addClass('waveLeft');
+		$('.rightLeg').addClass('waveRight');	
+		$('.leftLeg').addClass('waveLeft');
+		$('.rightArm').addClass('waveRight');
+		$('.body').addClass('waveBody');		
+	}	
+	else if(percentage >= 71)
+	{
+		stopAnimation();
+		$('.head').addClass('crazyHead');
+		$('.eyes').addClass('excited');		
+		$(".mouth").addClass('openMouth');
+		$('.mouth').addClass('excited');
+		$('.leftArm').addClass('waveLeft');
+		$('.rightLeg').addClass('crazyRight');	
+		$('.leftLeg').addClass('crazyLeft');
+		$('.rightArm').addClass('waveRight');
+		$('.body').addClass('waveBody');
+	}		
+}
+function stopAnimation()
+{
+	$('.shrugLeft').removeClass('shrugLeft');
+	$('.shrugRight').removeClass('shrugRight');	
+	$('.SleepyBlink').removeClass('SleepyBlink');
+	$('.SleepyHeadRoll').removeClass('SleepyHeadRoll');	
+	$('.waveLeft').removeClass('waveLeft');	
+	$('.waveRight').removeClass('waveRight');
+	$('.waveBody').removeClass('waveBody');	
+	$('.excited').removeClass('excited');
+	$('.crazyHead').removeClass('crazyHead');
+	$('.crazyRight').removeClass('crazyRight');
+	$('.crazyLeft').removeClass('crazyLeft');
+	$('.openMouth').removeClass('openMouth');
+	$('.ooMouth').removeClass('ooMouth');		
+}
+
 
 /* Based on: http://html5videoguide.net/code_c4_20.html
  * Create Custom Buttons
@@ -28,18 +128,18 @@ function videoControls()
 	progress  = $("#progress");
 	curTime   = $("#curTime");
 	endTime   = $("#duration");
-	timeDrag  = false;
+	progTimeDrag  = false;
+	volTimeDrag  = false;
 	timer     = '';
-	 
-	volume    = $("#volume");
-	vol       = $("#vol");
 	
 	play      = $("#play");
 	stop      = $("#stop");
 	
-	louder    = $("#louder");
-	quieter   = $("#quieter");
 	mute      = $("#mute");
+	volumeBar = $('#volumebar');
+	vol       = $("#volume");
+	volUp     = $("#volUp");
+	volDown   = $("#volDown");
 	
 	// This doesn't work all of the time, why does everyone suggest using it???
 	mainVideo.on('loadedmetadata', function() 
@@ -59,29 +159,30 @@ function videoControls()
     	progress.css('width', percentage+'%');
 	});
 	
+    /* PROGRESS BAR */
     progressBar.mousedown(function(event) 
     {
-	   timeDrag = true;
-	   updatebar(event.pageX);
+    	progTimeDrag = true;
+	   updateProgressBar(event.pageX);
     });	
     
-    $(document).mouseup(function(e) 
+    progressBar.mouseup(function(event) 
     {
-	   if(timeDrag) 
+	   if(progTimeDrag) 
 	   {
-	      timeDrag = false;
-	      updatebar(event.pageX);
+		   progTimeDrag = false;
+	      updateProgressBar(event.pageX);
 	   }
 	});
     
-	$(document).mousemove(function(e) 
+    progressBar.mousemove(function(event) 
 	{
-	   if(timeDrag) 
-		   updatebar(event.pageX);
-	});    
-    
+	   if(progTimeDrag) 
+		   updateProgressBar(event.pageX);
+	}); 
+  
 	//update Progress Bar control
-	var updatebar = function(x) 
+	var updateProgressBar = function(x) 
 	{
 	   var maxduration = video.duration;
 	   var position    = x - progress.offset().left; //Click pos
@@ -97,17 +198,20 @@ function videoControls()
 	   //Update progress bar and video currenttime
 	   progress.css('width', percentage+'%');
 	   video.currentTime = maxduration * percentage / 100;
-	};    
-    
+	};  
+    /* END PROGRESS BAR */	
+	
     play.click(function(event) 
 	{
 		if (video.paused == false) {
 			video.pause();
+			stopAnimation();
 			this.style.backgroundPosition = "0 0";
 			$(this).removeClass('icon-pause');
 			$(this).addClass('icon-play');
 		} else {
 			video.play();
+			animateStickman();
 			this.style.backgroundPosition = "0 -151px";
 			$(this).removeClass('icon-play');
 			$(this).addClass('icon-pause');
@@ -118,9 +222,85 @@ function videoControls()
 	{
 		if (video.paused == false) {
 			video.pause();
+			stopAnimation();;
 			this.style.backgroundPosition = "0 0";
+			play.removeClass('icon-pause');
+			play.addClass('icon-play');
 		}
 	});
+	
+	/* VOLUME CONTROLS */	
+	mute.click(function(event)
+	{
+	   video.muted = !video.muted;
+	   return false;
+	});
+	
+	volUp.click(function(event)
+	{
+		var V = video.volume + .10;
+		setVolume(V);
+	});
+	
+	volDown.click(function(event)
+	{
+		var V = video.volume - .10;
+		setVolume(V);
+	});
+	
+	volumeBar.mousedown(function(event) 
+    {
+		volTimeDrag = true;
+	   updateVolumeBar(event.pageY);
+    });	
+    
+	volumeBar.mouseup(function(event) 
+    {
+	   if(volTimeDrag) 
+	   {
+		  volTimeDrag = false;
+	      updateVolumeBar(event.pageY);
+	   }
+	});
+    
+	volumeBar.mousemove(function(event) 
+	{
+	   if(volTimeDrag) 
+		   updateVolumeBar(event.pageY);
+	});  
+	
+	var setVolume = function(V) 
+	{
+		var percentage = V * 100;
+		
+	   //Check within range
+	   if(percentage > 100) 
+	      percentage = 100;
+
+	   if(percentage < 0)
+	      percentage = 0;
+		   
+		vol.css('height', percentage+'%');
+		video.volume = percentage / 100;
+	}
+	//update Progress Bar control
+	var updateVolumeBar = function(Y) 
+	{
+		var position   = Y - volumeBar.offset().top;
+		var percentage = 100 - (100 * position / volumeBar.height());
+
+	   //Check within range
+	   if(percentage > 100) 
+	      percentage = 100;
+
+	   if(percentage < 0)
+	      percentage = 0;
+	   
+	   //Update progress bar and video currenttime
+	   vol.css('height', percentage+'%');
+	   video.volume = percentage / 100;
+	};	
+	/* END VOLUME CONTROLS */
 }
 
 function reflection(VideoWrapper, Canvas)
@@ -230,7 +410,5 @@ function ambience(VideoWrapper, Canvas)
 	  g = Math.ceil(g / (frame.data.length / 4));
 	  b = Math.ceil(b / (frame.data.length / 4));
 	  return Array(r, g, b);
-	}
-	
-	
+	}	
 }
