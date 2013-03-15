@@ -1,5 +1,5 @@
-/* Base classes 
-body{background:black;}*/
+/* Base classes*/ 
+body{background:black;}
 .wrapper
 {
      overflow: hidden;
@@ -9,10 +9,9 @@ body{background:black;}*/
 /* Core Skeleton: No skinning */
 .video_player
 {
-     width:800px;
+     width:790px; 
      font-size:100%; /* 16px */
      margin:auto;
-     border-radius:5px 5px 0 0;  
      border:solid 5px black;
 }
 
@@ -21,26 +20,43 @@ body{background:black;}*/
      padding:15px;
      padding-bottom:0;
      padding-right:0;
+     border-radius:5px;  
      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(125,185,232,0)), color-stop(61%,rgba(38,57,71,0)), color-stop(88%,rgba(0,0,0,1)));
      background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(38,57,71,0) 61%,rgba(0,0,0,1) 88%);
+     min-height:420px;
 }
     video
     {
         vertical-align: bottom;
+        margin-left:7px;
         box-shadow: 0px 5px 5px #000;
     }
-     #reflection{background:#121411;}
+    .reflection-container
+     {
+          min-height:55px;
+          margin-top:-15px;
+          position: relative;
+          -webkit-perspective: 770px; 
+          margin-left:-5px;    
+     }
+    #reflection
+    {
+          background:#121411;
+          -webkit-transform: rotateX( 64deg );
+    }
 
 #positionview 
 {
-    width: 100%;
+    width: 103%;
     height: 15px;
+     margin-top:-13px;
+     margin-left:-17px;
 }    
     #progressBar 
     {
          height: 100%;
          position: relative;
-         background-color:transparent;
+         background:rgba(255, 255, 255, .5);
     }
     #progress 
     {
@@ -68,42 +84,42 @@ body{background:black;}*/
 .controls
 {
      text-align:center;
-     font-size:1.5em;
      background: black;
+     height:110px;
+     line-height:110px;
+     margin-top:5px;
 }
      .ctrbtn
      {
           cursor:pointer;
-          color:white;
+          color: black;
+          font-size:3.5em;
+          border:solid 2px transparent;
+          border-radius:22px 22px;
+          text-shadow: 1px 1px 20px white;
+          box-shadow: 1px 1px 20px white;
+          margin-right:10px;
      }
-     
+   
      .ctrbtn:hover
      {
-          color:green;   
+          text-shadow: 1px 1px 20px #99FF99;
+          box-shadow: 1px 1px 20px #99FF99; 
      }
-
-#volumecontrol 
-{
-    width:10px;
-    height:59%;
-    float:right;
-    margin-top:15px;
-}
-    #volumebar 
-    {
-         height: 100%;
-         width:100%;
-         position: relative;
-         background:rgba(0, 0, 100, .5);
-    }
-    #volume 
-    {
-         background:rgba(100, 0, 0, .8);
-         z-index:1;
-         width:100%;
-         position:absolute;
-         bottom:0;
-    }
+     
+     .mute_active,
+     .mute_active:hover
+     {
+          text-shadow: 1px 1px 20px red; 
+          box-shadow: 1px 1px 20px red;
+     }
+     
+     .ctrbtn:active,
+     .mute_active:active
+     {
+          text-shadow: 1px 1px 20px #9998FF;
+          box-shadow: 1px 1px 20px #9998FF; 
+     }  
 
 /* Color the border by the video */
 .ambience 
@@ -123,12 +139,43 @@ body{background:black;}*/
 }
 
 /* Mr. Stick */
+.volume
+{
+     float:right;   
+     margin-left:-100px; 
+     width:120px; 
+     height:100px;    
+}
+#volumecontrol 
+{
+    width:10px;
+    height:95px;
+    margin-top:5px;
+     float:right;
+}
+    #volumebar 
+    {
+         height: 100%;
+         width:100%;
+         position: relative;
+         background:rgba(255, 255, 255, .5);
+    }
+    #volume 
+    {
+         background:rgba(74, 139, 245, .8);
+         z-index:1;
+         width:100%;
+         position:absolute;
+         bottom:0;
+    }
 .stickman
 {
+     
      width:100px;
      height:100px;
-     margin-left:-100px;
-     float:right;
+     font-size:1.5em;
+     line-height:normal;
+     -webkit-perspective: 100px;
 }
 .head 
 {
@@ -143,7 +190,20 @@ body{background:black;}*/
      margin-left: -22px;
      text-align: center;
      line-height: 40px;
-     z-index:5;
+     z-index:5;   
+
+     transition-property: all;
+     transition-duration: 1s;
+     transition-timing-function: linear;
+     -moz-transition-property: all;
+     -moz-transition-duration: 1s;
+     -moz-transition-timing-function: linear;
+     -webkit-transition-property: all;
+     -webkit-transition-duration: 1s;
+     -webkit-transition-timing-function: linear;
+     -o-transition-property: all;
+     -o-transition-duration: 1s;
+     -o-transition-timing-function: linear;
 }
 
 .eyes
@@ -333,9 +393,24 @@ body{background:black;}*/
       -webkit-animation-name: crazyHead;
       -webkit-animation-iteration-count: infinite;
       -webkit-animation-direction: alternate;
-     -webkit-animation-delay:2s;       
+     -webkit-animation-delay:2s; 
+     box-shadow: 1px 1px 20px red;      
 }
 
+.flip
+{
+     -webkit-animation-duration: 2s;
+      -webkit-animation-name: flip;
+      -webkit-animation-iteration-count: infinite;
+     -webkit-animation-delay:2s;          
+}
+.spin
+{
+     -webkit-animation-duration: 4s;
+      -webkit-animation-name: spin;
+      -webkit-animation-iteration-count: infinite;
+     -webkit-animation-delay:2s;          
+}
 .openMouth
 {
      height:3px;
@@ -454,4 +529,22 @@ body{background:black;}*/
      5% {-webkit-transform: rotate(160deg);}
      15% {-webkit-transform: rotate(260deg);}
      100% {-webkit-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes flip 
+{
+     0% {-webkit-transform: rotatex(0deg);}
+     15% {-webkit-transform: rotatex(91deg);}
+     30% {-webkit-transform: rotatex(160deg);}
+     40% {-webkit-transform: rotatex(160deg);}
+     100% {-webkit-transform: rotatex(360deg);}
+}
+
+@-webkit-keyframes spin 
+{
+     0% {-webkit-transform: rotatey(0deg);}
+     15% {-webkit-transform: rotatey(91deg);}
+     30% {-webkit-transform: rotatey(160deg);}
+     40% {-webkit-transform: rotatey(160deg);}
+     100% {-webkit-transform: rotatey(360deg);}
 }

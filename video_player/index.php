@@ -6,24 +6,18 @@
 </head>
 <body>
 
-<div id='VideoPlayer' class='video_player '>
-        <div id="volumecontrol" class='wrapper'>        
-          <div id="volumebar">
-              <div id="volume" style='height: 0px;'></div>
-          </div>             
-        </div>        
+<div id='VideoPlayer' class='video_player'>      
         <div id='MainViewer' class='main_viewer ambience'>
-            <video id='mainVideo' width='770'>
+            <video id='mainVideo' width='745'>
                 <source src="/jordan/8020/video_player/video/video1.mp4" type="video/mp4"><!-- MP4 -->
                 <source src="/jordan/8020/video_player/video/video1.ogv" type="video/ogg"><!-- OGG -->
             </video>
-            <canvas id="reflection" width='770' height='55' style="vertical-align: top;"></canvas>
+            <div class='reflection-container'><canvas id="reflection" width='770' height='55' style="vertical-align: top;"></canvas></div>
     
               <div id="positionview" class='wrapper'>        
-                  <div id="progressBar">
+                  <div id="progressBar" class="ambience">
                       <div id="progress" style='width: 0px;'></div>
                   </div>
-                  <!--<div id="time"><span id="curTime"></span> / <span id="duration"></span></div>-->
               </div> 
     
         </div><!-- End Main Viewer Block -->
@@ -36,6 +30,12 @@
         <span id="volDown"  class='ctrbtn icon-volume-down'></span>
         <span id="volUp"  class='ctrbtn icon-volume-up'></span>
         
+        <div class='volume wrapper'>
+                 <div id="volumecontrol" class='wrapper'>        
+          <div id="volumebar" class="ambience">
+              <div id="volume" style='height: 0px;'></div>
+          </div>             
+        </div>  
         <div class='stickman wrapper'>
             <span class='head'>
                 <span class='eyes leftEye'></span>
@@ -55,6 +55,8 @@
             <span class='right rightLeg limb'>
                 <span class='segment_1'></span>
             </span>
+          </div>  
+
         </div>
        
                  
